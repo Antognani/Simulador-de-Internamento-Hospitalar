@@ -4,22 +4,38 @@ Projeto para construção de um sistema automático para gerenciar os internamen
 Foi feito o uso de camelCase para nomear variáveis e funções.
 
 O projeto foi modularizado da seguinte maneira:
+
 /hospital/
 
 |
 
 |-- paciente.h
+
 |
+
 |-- estruturas.h
+
 |-- estruturas.c
+
 |
+
 |-- log.h
+
 |-- log.c
+
 |
+
 |-- simulacao.h
+
 |-- simulacao.c
+
 |
+
 |-- main.c
+
 |
+
 |-- makefile
+
 |-- pacientes.csv
+
