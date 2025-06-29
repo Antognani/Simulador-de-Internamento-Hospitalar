@@ -5,7 +5,9 @@ Foi feito o uso de camelCase para nomear variáveis e funções.
 
 O projeto foi modularizado da seguinte maneira:
 /hospital/
+
 |
+
 |-- paciente.h
 |
 |-- estruturas.h
