@@ -4,19 +4,22 @@
 
 #include "paciente.h" 
 #define CAPACIDADE_LEITOS 10
+//ESTRUTURAS DE DADOS
 
-
+//NÓ
 typedef struct No {
     Paciente paciente;
     struct No* proximo;
     struct No* anterior;
 } No;
 
+//LISTA DE LEITOS
 typedef struct ListaLeitos {
     Paciente pacientes[CAPACIDADE_LEITOS]; //qntd leitos
     int ocupacao; //qntd pacientes internados
 } ListaLeitos;
 
+//DEQUE
 typedef struct Deque {
     No* frente;
     No* tras;
@@ -24,24 +27,25 @@ typedef struct Deque {
     int capacidade; //max 20
 } Deque;
 
+//PILHA
 typedef struct Pilha {
     No* topo;
 } Pilha;
-
+//TABELA HASH
 typedef struct TabelaHash {
     No** tabela; //array de ponteiros para No
     int tamanho; //tamanho da tabela hash
 } TabelaHash;
 
 
-//PILHA
+//FUNÇÕES DA PILHA
 Pilha* pilhaIniciar(Pilha* p);
 void pilhaPush(Pilha* p, Paciente pac);
 int pilhaEstaVazia(Pilha* p);
 Paciente pilhaPop(Pilha* p);
 void exibirPilha(Pilha* p);
 
-//DEQUE
+//FUNÇÕES DO DEQUE
 Deque* dequeIniciar(int capacidade);
 int dequeEstaCheio(Deque* d);
 int dequeEstaVazio(Deque* d);
@@ -51,13 +55,13 @@ Paciente dequeRemoverCabeca(Deque* d);
 Paciente dequeRemoverFim(Deque* d);
 Paciente dequeRemoverPorPrioridade(Deque* d);
 
-//TABELA HASH
+//FUNÇÕES DA TABELA HASH
 TabelaHash* tabelaHashIniciar(int tamanho);
 void tabelaHashInserir(TabelaHash* th, Paciente pac);
 Paciente* tabelaHashProcurar(TabelaHash* th, const char* id);
 void tabelaHashImprimir(TabelaHash* th)
 
-//LISTA DE LEITOS
+//FUNÇÕES DA LISTA DE LEITOS
 ListaLeitos* LeitosIniciar();
 void LeitosAdicionar(ListaLeitos* ll, Paciente paciente);
 int leitosEstaCheio(ListaLeitos* ll);
