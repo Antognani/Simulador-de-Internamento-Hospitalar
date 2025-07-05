@@ -5,15 +5,31 @@
 #include "paciente.h" // Precisa saber o que é um Paciente
 
 // Definições das estruturas (Node, Pilha, Deque, TabelaHash, etc.)
-typedef struct Node {
+typedef struct No {
     Paciente paciente;
-    struct Node* proximo;
-    struct Node* anterior;
-} Node;
+    struct No* proximo;
+    struct No* anterior;
+} No;
 
-typedef struct Deque { /* ... */ } Deque;
-typedef struct Pilha { /* ... */ } Pilha;
-// ... e assim por diante
+typedef struct {
+    No* cabeca;
+    No* fim;
+} Lista;
+
+typedef struct {
+    No* frente;
+    No* tras;
+} Deque;
+
+typedef struct {
+    No* topo;
+} Pilha;
+
+typedef struct {
+    int tamanho;
+    Lista* tabela;
+} TabelaHash;
+
 
 // Protótipos das funções do Deque
 Deque* deque_criar();
