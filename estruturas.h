@@ -2,46 +2,66 @@
 #ifndef ESTRUTURAS_H
 #define ESTRUTURAS_H
 
-#include "paciente.h" // Precisa saber o que é um Paciente
+#include "paciente.h" 
+#define CAPACIDADE_LEITOS 10
 
-// Definições das estruturas (Node, Pilha, Deque, TabelaHash, etc.)
+
 typedef struct No {
     Paciente paciente;
     struct No* proximo;
     struct No* anterior;
 } No;
 
-typedef struct {
-    No* cabeca;
-    No* fim;
-} Lista;
+typedef struct ListaLeitos {
+    Paciente pacientes[CAPACIDADE_LEITOS]; //qntd leitos
+    int ocupacao; //qntd pacientes internados
+} ListaLeitos;
 
-typedef struct {
+typedef struct Deque {
     No* frente;
     No* tras;
+    int tamanho;
+    int capacidade; //max 20
 } Deque;
 
-typedef struct {
+typedef struct Pilha {
     No* topo;
 } Pilha;
 
-typedef struct {
-    int tamanho;
-    Lista* tabela;
+typedef struct TabelaHash {
+    No** tabela; //array de ponteiros para No
+    int tamanho; //tamanho da tabela hash
 } TabelaHash;
 
 
-// Protótipos das funções do Deque
-Deque* deque_criar();
-void deque_inserir_frente(Deque* d, Paciente p);
-void deque_inserir_fim(Deque* d, Paciente p);
-// ... outros protótipos
+//PILHA
+Pilha* pilhaIniciar(Pilha* p);
+void pilhaPush(Pilha* p, Paciente pac);
+int pilhaEstaVazia(Pilha* p);
+Paciente pilhaPop(Pilha* p);
+void exibirPilha(Pilha* p);
 
-// Protótipos das funções da Pilha
-Pilha* pilha_criar();
-void pilha_push(Pilha* p, Paciente pac);
-// ... outros protótipos
+//DEQUE
+Deque* dequeIniciar(int capacidade);
+int dequeEstaCheio(Deque* d);
+int dequeEstaVazio(Deque* d);
+void dequeInserirInicio(Deque* d, Paciente pac);
+void dequeInserirFim(Deque* d, Paciente pac);
+Paciente dequeRemoverCabeca(Deque* d);
+Paciente dequeRemoverFim(Deque* d);
+Paciente dequeRemoverPorPrioridade(Deque* d);
 
-// ... protótipos para Tabela Hash e Lista de Leitos
+//TABELA HASH
+TabelaHash* tabelaHashIniciar(int tamanho);
+void tabelaHashInserir(TabelaHash* th, Paciente pac);
+Paciente* tabelaHashProcurar(TabelaHash* th, const char* id);
+void tabelaHashImprimir(TabelaHash* th)
 
-#endif // ESTRUTURAS_H
+//LISTA DE LEITOS
+ListaLeitos* LeitosIniciar();
+void LeitosAdicionar(ListaLeitos* ll, Paciente paciente);
+int leitosEstaCheio(ListaLeitos* ll);
+int leitosEstaVazio(ListaLeitos* ll);
+Paciente leitosRemoverAleatorio(ListaLeitos* ll);
+
+#endif
