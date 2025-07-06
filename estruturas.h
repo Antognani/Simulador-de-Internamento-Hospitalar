@@ -25,7 +25,7 @@ typedef struct Deque {
     No* frente;
     No* tras;
     int tamanho;
-    int capacidade; //max 20
+    int capacidade; //lembrar de definir max 20
 } Deque;
 
 //PILHA
@@ -44,8 +44,6 @@ typedef struct TabelaHash {
 Pilha* pilhaIniciar();
 void pilhaPush(Pilha* p, Paciente pac);
 int pilhaEstaVazia(Pilha* p);
-Paciente pilhaPop(Pilha* p);
-void exibirPilha(Pilha* p);
 
 //FUNÇÕES DO DEQUE
 Deque* dequeIniciar(int capacidade);
@@ -60,8 +58,6 @@ Paciente dequeRemoverPorPrioridade(Deque* d);
 //FUNÇÕES DA TABELA HASH
 TabelaHash* tabelaHashIniciar(int tamanho);
 void tabelaHashInserir(TabelaHash* th, Paciente pac);
-Paciente* tabelaHashProcurar(TabelaHash* th, const char* id);
-void tabelaHashImprimir(TabelaHash* th);
 Paciente* tabelaHashSorteioPacNaoAtendido(TabelaHash* th);
 
 //FUNÇÕES DA LISTA DE LEITOS
@@ -72,6 +68,7 @@ void leitosIncrementarCiclos(ListaLeitos* ll);
 int leitosEstaCheio(ListaLeitos* ll);
 int leitosEstaVazio(ListaLeitos* ll);
 Paciente leitosRemoverAleatorio(ListaLeitos* ll);
+Paciente leitosRemoverAleatorioApto(ListaLeitos* ll);
 
 //DESTRUTORES
 void pilhaDestruir(Pilha* p);
