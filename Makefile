@@ -2,9 +2,9 @@
 CC = gcc
 CFLAGS = -g -Wall
 
-EXEC = simulador
+EXEC = hospital
 
-SRCS = main.c simulacao.c estruturas.c log.c
+SRCS = main.c simulacao.c estruturas.c io.c
 
 OBJS = $(SRCS:.c=.o)
 

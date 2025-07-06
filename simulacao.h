@@ -1,6 +1,6 @@
 #ifndef SIMULACAO_H
 #define SIMULACAO_H
 
-void iniciar_simulacao();
+void iniciarSimulacao();
 
 #endif // SIMULACAO_H

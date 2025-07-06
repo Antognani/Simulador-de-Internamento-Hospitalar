@@ -9,6 +9,7 @@ typedef struct Paciente {
     char cpf[12]; //cpf como string e sem pontuação pra evitar problema de formatação
     int prioridade;
     int atendido;
+    int ciclosInternado;
 } Paciente;
 
 #endif // PACIENTE_H

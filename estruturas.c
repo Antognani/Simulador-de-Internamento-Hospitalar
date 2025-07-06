@@ -8,7 +8,7 @@
 //INICIALIZAÇÃO PILHA
 Pilha* pilhaIniciar() {
    Pilha* novaPilha = (Pilha*) malloc(sizeof(Pilha));
-    if (novaPilha != NULL) {
+    if (novaPilha) {
         novaPilha->topo = NULL;
     }
     return novaPilha;
@@ -47,7 +47,7 @@ int pilhaEstaVazia(Pilha* p) {
 //IMPLEMENTAÇÃO DO DEQUE
 Deque* dequeIniciar(int capacidade){
     Deque* novoDeque = (Deque*)malloc(sizeof(Deque));
-    if (novoDeque != NULL) {
+    if (novoDeque) {
         novoDeque->frente = NULL;
         novoDeque->tras = NULL;
         novoDeque->tamanho = 0;
@@ -82,7 +82,7 @@ void dequeInserirCabeca(Deque* d, Paciente pac) {
     novoNo->proximo = d->frente;
 
     if (dequeEstaVazio(d)) {
-        d->frente = d;
+        d->frente = novoNo;
     } else {
         d->frente->anterior = novoNo;
         d->frente = novoNo;
@@ -124,7 +124,7 @@ Paciente dequeRemoverCabeca(Deque* d) {
     Paciente pacienteRemovido = noRemovido->paciente;
 
     d->frente = noRemovido->proximo;
-    if (d->frente != NULL) {
+    if (d->frente) {
         d->frente->anterior = NULL;
     } else {
         d->tras = NULL; // Se o deque ficar vazio
@@ -144,7 +144,7 @@ Paciente dequeRemoverFim(Deque* d) {
     Paciente pacienteRemovido = noRemovido->paciente;
 
     d->tras = noRemovido->anterior;
-    if (d->tras != NULL) {
+    if (d->tras) {
         d->tras->proximo = NULL;
     } else {
         d->frente = NULL; // Se o deque ficar vazio
@@ -193,7 +193,7 @@ unsigned int hash(const char* id, int tamanho) {
 //inicializa a tabela hash
 TabelaHash* tabelaHashIniciar(int tamanho) {
     TabelaHash* novaTabela = (TabelaHash*)malloc(sizeof(TabelaHash));
-    if (novaTabela != NULL) {
+    if (novaTabela) {
         novaTabela->tamanho = tamanho;
         novaTabela->tabela = (No**)malloc(tamanho * sizeof(No*));
         if (novaTabela->tabela == NULL) {
@@ -228,7 +228,7 @@ Paciente* tabelaHashProcurar(TabelaHash* th, const char* id) {
     unsigned int indice = hash(id, th->tamanho);
     No* atual = th->tabela[indice];
 
-    while (atual != NULL) {
+    while (atual) {
         if (strcmp(atual->paciente.id, id) == 0) { //se strings iguais, retorna 0
             return &atual->paciente; //retorna o ponteiro para o paciente encontrado
         }
@@ -237,7 +237,7 @@ Paciente* tabelaHashProcurar(TabelaHash* th, const char* id) {
     return NULL; //não encontrou
 }
 
-//AUX PRINTAR CONTEUDO
+//AUX PRINTAR CONTEUDO TABELA HASH
 void tabelaHashPrintar(TabelaHash* th) {
     printf("----------Tabela Hash:----------\n");
     for (int i = 0; i < th->tamanho; i++) {
@@ -246,7 +246,7 @@ void tabelaHashPrintar(TabelaHash* th) {
         if (atual == NULL) {
             printf("Vazio\n");
         } else {
-            while (atual != NULL) {
+            while (atual) {
                 printf("ID: %s, Nome: %s] -> ", atual->paciente.id, atual->paciente.nomeCompleto);
                 atual = atual->proximo;
             }
@@ -256,22 +256,43 @@ void tabelaHashPrintar(TabelaHash* th) {
     printf("-------------------------------\n");
 }
 
+//INICIALIZA LISTA DOS LEITOS
 ListaLeitos* LeitosIniciar() {
     ListaLeitos* ll= (ListaLeitos*)malloc(sizeof(ListaLeitos));
-    if (ll!= NULL) {
+    if (ll) {
         ll->ocupacao = 0; //inicializa ocupacao
     }
     return ll;
 }
 
+//INCREMENTA CICLOS INTERNADO
+void leitosIncrementarCiclos(ListaLeitos* ll) {
+    for (int i = 0; i < ll->ocupacao; i++) {
+        ll->pacientes[i].ciclosInternado++;
+    }
+}
+
+//AUX CHECA SE HÁ PACIENTES APTOS PARA ALTA
+int leitosTemPacienteAptoAlta(ListaLeitos* ll) {
+    for (int i = 0; i < ll->ocupacao; i++) {
+        if (ll->pacientes[i].ciclosInternado >= 1) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+//AUX CHECA SE LEITOS ESTAO CHEIOS
 int leitosEstaCheio(ListaLeitos* ll) {
     return ll->ocupacao >= CAPACIDADE_LEITOS; //verifica se a ocupacao é maior ou igual a capacidade
 }
 
+//AUX CHECA SE OS LEITOS ESTAO VAZIOS
 int leitosEstaVazio(ListaLeitos* ll) {
     return ll->ocupacao == 0; //verifica se a ocupacao é igual a 0
 }
 
+//MOVE PACIENTE A UM LEITO
 void LeitosAdicionar(ListaLeitos* ll, Paciente paciente) {
     if (leitosEstaCheio(ll)) {
         fprintf(stderr, "Lista de leitos cheia. Não é possível adicionar pacientes.\n");
@@ -281,13 +302,13 @@ void LeitosAdicionar(ListaLeitos* ll, Paciente paciente) {
     ll->ocupacao++; //incrementa a ocupacao
 }
 
+// REMOVE PAC ALEAT. (escolhe aleatoriamente (usando rand()) um paciente para dar alta)
 Paciente leitosRemoverAleatorio(ListaLeitos* ll) {
     if (leitosEstaVazio(ll)) {
         fprintf(stderr, "Lista de leitos vazia. Não é possível remover pacientes.\n");
         exit(EXIT_FAILURE);
     }
 
-    // Gera um índice aleatório
     int indice = rand() % ll->ocupacao;
 
     // Salva o paciente a ser removido
@@ -298,4 +319,82 @@ Paciente leitosRemoverAleatorio(ListaLeitos* ll) {
     ll->ocupacao--; // Decrementa a ocupação
 
     return pacienteRemovido;
+}
+
+//SORTEIA NÃO ATENDIDO DA TABELA HASH
+Paciente* tabelaHashSorteioPacNaoAtendido(TabelaHash* th){
+
+    int contador = 0; 
+    //conta quantos pacientes não atendidos existem na tabela hash  
+    for (int i = 0; i < th->tamanho; i++) { 
+        No* atual = th->tabela[i];
+        while (atual) {
+            if (atual->paciente.atendido == 0) { //se paciente não foi atendido
+                contador++;
+            }
+            atual = atual->proximo;
+        }
+    }
+    if (contador == 0) {
+        fprintf(stderr, "Nenhum paciente não atendido encontrado.\n");
+        return NULL; //não há pacientes não atendidos
+}
+    //checar quais são os pacientes aptos
+    Paciente** lista_aptos = (Paciente**)malloc(contador * sizeof(Paciente*));
+    int indice_lista = 0;
+    //preenche a lista de pacientes aptos
+    for (int i = 0; i < th->tamanho; i++) {
+        No* atual = th->tabela[i];
+        while (atual) {
+            if (atual->paciente.atendido == 0) { //se paciente não foi atendido
+                lista_aptos[indice_lista] = &atual->paciente; //adiciona o ponteiro do paciente na lista
+                indice_lista++;
+            }
+            atual = atual->proximo;
+        }
+    }
+
+    //sorteia um paciente da lista de aptos
+    int sorteio = rand() % contador; //gera um número aleatório entre 0 e contador - 1
+    Paciente* pacienteSorteado = lista_aptos[sorteio]; //pega o ponteiro para o paciente sorteado
+    free(lista_aptos); //libera a memória alocada para a lista de aptos
+    return pacienteSorteado; //retorna o ponteiro para o paciente sorteado
+}
+
+//DESTRUTORES
+void pilhaDestruir(Pilha* p) {
+    No* atual = p->topo;
+    while (atual) {
+        No* proximo = atual->proximo; //salva o próximo nó
+        free(atual); //libera o nó atual
+        atual = proximo; //avança para o próximo nó
+    }
+    free(p); //libera a pilha
+}
+
+void dequeDestruir(Deque* d) {
+    No* atual = d->frente;
+    while (atual) {
+        No* proximo = atual->proximo; //salva o próximo nó
+        free(atual); //libera o nó atual
+        atual = proximo; //avança para o próximo nó
+    }
+    free(d); //libera o deque
+}
+
+void tabelaHashDestruir(TabelaHash* th) {
+    for (int i = 0; i < th->tamanho; i++) {
+        No* atual = th->tabela[i];
+        while (atual) {
+            No* proximo = atual->proximo; //salva o próximo nó
+            free(atual); //libera o nó atual
+            atual = proximo; //avança para o próximo nó
+        }
+    }
+    free(th->tabela); //libera a tabela
+    free(th); //libera a tabela hash
+}
+
+void leitosDestruir(ListaLeitos* ll) {
+    free(ll); //libera a lista de leitos
 }

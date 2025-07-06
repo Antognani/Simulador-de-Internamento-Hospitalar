@@ -4,6 +4,7 @@
 
 #include "paciente.h" 
 #define CAPACIDADE_LEITOS 10
+
 //ESTRUTURAS DE DADOS
 
 //NÓ
@@ -31,6 +32,7 @@ typedef struct Deque {
 typedef struct Pilha {
     No* topo;
 } Pilha;
+
 //TABELA HASH
 typedef struct TabelaHash {
     No** tabela; //array de ponteiros para No
@@ -39,7 +41,7 @@ typedef struct TabelaHash {
 
 
 //FUNÇÕES DA PILHA
-Pilha* pilhaIniciar(Pilha* p);
+Pilha* pilhaIniciar();
 void pilhaPush(Pilha* p, Paciente pac);
 int pilhaEstaVazia(Pilha* p);
 Paciente pilhaPop(Pilha* p);
@@ -49,7 +51,7 @@ void exibirPilha(Pilha* p);
 Deque* dequeIniciar(int capacidade);
 int dequeEstaCheio(Deque* d);
 int dequeEstaVazio(Deque* d);
-void dequeInserirInicio(Deque* d, Paciente pac);
+void dequeInserirCabeca(Deque* d, Paciente pac);
 void dequeInserirFim(Deque* d, Paciente pac);
 Paciente dequeRemoverCabeca(Deque* d);
 Paciente dequeRemoverFim(Deque* d);
@@ -59,13 +61,21 @@ Paciente dequeRemoverPorPrioridade(Deque* d);
 TabelaHash* tabelaHashIniciar(int tamanho);
 void tabelaHashInserir(TabelaHash* th, Paciente pac);
 Paciente* tabelaHashProcurar(TabelaHash* th, const char* id);
-void tabelaHashImprimir(TabelaHash* th)
+void tabelaHashImprimir(TabelaHash* th);
+Paciente* tabelaHashSorteioPacNaoAtendido(TabelaHash* th);
 
 //FUNÇÕES DA LISTA DE LEITOS
 ListaLeitos* LeitosIniciar();
 void LeitosAdicionar(ListaLeitos* ll, Paciente paciente);
+int leitosTemPacienteAptoAlta(ListaLeitos* ll);
+void leitosIncrementarCiclos(ListaLeitos* ll);
 int leitosEstaCheio(ListaLeitos* ll);
 int leitosEstaVazio(ListaLeitos* ll);
 Paciente leitosRemoverAleatorio(ListaLeitos* ll);
 
+//DESTRUTORES
+void pilhaDestruir(Pilha* p);
+void dequeDestruir(Deque* d);
+void tabelaHashDestruir(TabelaHash* th);
+void leitosDestruir(ListaLeitos* ll);
 #endif
