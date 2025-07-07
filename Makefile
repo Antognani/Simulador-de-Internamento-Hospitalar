@@ -1,22 +1,22 @@
-#MAKEFILE
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -Iinclude
 
-EXEC = hospital
+EXEC = bin/hospital
 
-SRCS = main.c simulacao.c estruturas.c io.c
-
-OBJS = $(SRCS:.c=.o)
+SRCS = src/main.c src/simulacao.c src/estruturas.c src/io.c
+OBJS = obj/main.o obj/simulacao.o obj/estruturas.o obj/io.o
 
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS)
+	@mkdir -p bin
+	$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c
+obj/%.o: src/%.c
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(EXEC) processamento.log
+	rm -f $(OBJS) $(EXEC)
 
 .PHONY: all clean

@@ -1,0 +1,250 @@
+[INICIO    ] Simulação iniciada.
+[INFO      ] Pacientes carregados do arquivo CSV.
+[CICLO     ] ---------------- CICLO 01 ----------------
+[ESPERA    ] PAC049 (Bruno Moraes)
+[INTERNADO ] PAC049 (Bruno Moraes)
+[CICLO     ] ---------------- CICLO 02 ----------------
+[ESPERA    ] PAC025 (Davi Lucas Freitas)
+[INTERNADO ] PAC025 (Davi Lucas Freitas)
+[CICLO     ] ---------------- CICLO 03 ----------------
+[ESPERA    ] PAC015 (Francisco Moraes)
+[INTERNADO ] PAC015 (Francisco Moraes)
+[CICLO     ] ---------------- CICLO 04 ----------------
+[ALTA      ] PAC015 (Francisco Moraes)
+[ESPERA    ] PAC027 (Daniel da Costa)
+[INTERNADO ] PAC027 (Daniel da Costa)
+[CICLO     ] ---------------- CICLO 05 ----------------
+[ALTA      ] PAC027 (Daniel da Costa)
+[ESPERA    ] PAC048 (Ana Clara Castro)
+[INTERNADO ] PAC048 (Ana Clara Castro)
+[CICLO     ] ---------------- CICLO 06 ----------------
+[ALTA      ] PAC025 (Davi Lucas Freitas)
+[ESPERA    ] PAC020 (Rafaela Peixoto)
+[INTERNADO ] PAC020 (Rafaela Peixoto)
+[CICLO     ] ---------------- CICLO 07 ----------------
+[ALTA      ] PAC049 (Bruno Moraes)
+[ESPERA    ] PAC037 (Luiz Miguel da Conceição)
+[INTERNADO ] PAC037 (Luiz Miguel da Conceição)
+[CICLO     ] ---------------- CICLO 08 ----------------
+[ALTA      ] PAC020 (Rafaela Peixoto)
+[ESPERA    ] PAC029 (Ana Beatriz Lima)
+[INTERNADO ] PAC029 (Ana Beatriz Lima)
+[CICLO     ] ---------------- CICLO 09 ----------------
+[ESPERA    ] PAC032 (Caio Novaes)
+[INTERNADO ] PAC032 (Caio Novaes)
+[CICLO     ] ---------------- CICLO 10 ----------------
+[ALTA      ] PAC029 (Ana Beatriz Lima)
+[ESPERA    ] PAC004 (Manuela Ferreira)
+[INTERNADO ] PAC004 (Manuela Ferreira)
+[CICLO     ] ---------------- CICLO 11 ----------------
+[ALTA      ] PAC037 (Luiz Miguel da Conceição)
+[ESPERA    ] PAC009 (Eduarda da Rosa)
+[INTERNADO ] PAC009 (Eduarda da Rosa)
+[CICLO     ] ---------------- CICLO 12 ----------------
+[ALTA      ] PAC004 (Manuela Ferreira)
+[ESPERA    ] PAC003 (Nina Melo)
+[INTERNADO ] PAC003 (Nina Melo)
+[CICLO     ] ---------------- CICLO 13 ----------------
+[ESPERA    ] PAC010 (Maria Sophia Melo)
+[INTERNADO ] PAC010 (Maria Sophia Melo)
+[CICLO     ] ---------------- CICLO 14 ----------------
+[ALTA      ] PAC009 (Eduarda da Rosa)
+[ESPERA    ] PAC026 (Maria Sales)
+[INTERNADO ] PAC026 (Maria Sales)
+[CICLO     ] ---------------- CICLO 15 ----------------
+[ALTA      ] PAC026 (Maria Sales)
+[ESPERA    ] PAC040 (Vitória Nogueira)
+[INTERNADO ] PAC040 (Vitória Nogueira)
+[CICLO     ] ---------------- CICLO 16 ----------------
+[ALTA      ] PAC003 (Nina Melo)
+[ESPERA    ] PAC014 (Fernanda Monteiro)
+[INTERNADO ] PAC014 (Fernanda Monteiro)
+[CICLO     ] ---------------- CICLO 17 ----------------
+[ESPERA    ] PAC019 (Sofia Peixoto)
+[INTERNADO ] PAC019 (Sofia Peixoto)
+[CICLO     ] ---------------- CICLO 18 ----------------
+[ESPERA    ] PAC021 (Samuel da Cruz)
+[INTERNADO ] PAC021 (Samuel da Cruz)
+[CICLO     ] ---------------- CICLO 19 ----------------
+[ESPERA    ] PAC016 (Noah Pires)
+[INTERNADO ] PAC016 (Noah Pires)
+[CICLO     ] ---------------- CICLO 20 ----------------
+[ESPERA    ] PAC012 (Caroline Costa)
+[INTERNADO ] PAC012 (Caroline Costa)
+[CICLO     ] ---------------- CICLO 21 ----------------
+[ESPERA    ] PAC042 (Gustavo Henrique Melo)
+[INTERNADO ] PAC042 (Gustavo Henrique Melo)
+[CICLO     ] ---------------- CICLO 22 ----------------
+[ALTA      ] PAC040 (Vitória Nogueira)
+[ESPERA    ] PAC045 (Marina Mendes)
+[INTERNADO ] PAC045 (Marina Mendes)
+[CICLO     ] ---------------- CICLO 23 ----------------
+[ESPERA    ] PAC039 (Luiz Miguel Santos)
+[CICLO     ] ---------------- CICLO 24 ----------------
+[ALTA      ] PAC014 (Fernanda Monteiro)
+[ESPERA    ] PAC011 (Benício Castro)
+[INTERNADO ] PAC011 (Benício Castro)
+[CICLO     ] ---------------- CICLO 25 ----------------
+[ALTA      ] PAC021 (Samuel da Cruz)
+[ESPERA    ] PAC044 (Giovanna Cavalcanti)
+[INTERNADO ] PAC044 (Giovanna Cavalcanti)
+[CICLO     ] ---------------- CICLO 26 ----------------
+[ESPERA    ] PAC038 (Enzo Gabriel Costela)
+[CICLO     ] ---------------- CICLO 27 ----------------
+[ALTA      ] PAC045 (Marina Mendes)
+[ESPERA    ] PAC018 (Emilly Cunha)
+[INTERNADO ] PAC039 (Luiz Miguel Santos)
+[CICLO     ] ---------------- CICLO 28 ----------------
+[ALTA      ] PAC044 (Giovanna Cavalcanti)
+[ESPERA    ] PAC002 (Beatriz Gomes)
+[INTERNADO ] PAC002 (Beatriz Gomes)
+[CICLO     ] ---------------- CICLO 29 ----------------
+[ALTA      ] PAC011 (Benício Castro)
+[ESPERA    ] PAC043 (Arthur Rezende)
+[INTERNADO ] PAC038 (Enzo Gabriel Costela)
+[CICLO     ] ---------------- CICLO 30 ----------------
+[ALTA      ] PAC039 (Luiz Miguel Santos)
+[ESPERA    ] PAC017 (Mirella Fernandes)
+[INTERNADO ] PAC018 (Emilly Cunha)
+[CICLO     ] ---------------- CICLO 31 ----------------
+[ESPERA    ] PAC036 (Luna Martins)
+[CICLO     ] ---------------- CICLO 32 ----------------
+[ESPERA    ] PAC050 (João Guilherme Cardoso)
+[CICLO     ] ---------------- CICLO 33 ----------------
+[ESPERA    ] PAC005 (Thomas Martins)
+[CICLO     ] ---------------- CICLO 34 ----------------
+[ALTA      ] PAC048 (Ana Clara Castro)
+[ESPERA    ] PAC030 (Matheus Rocha)
+[INTERNADO ] PAC050 (João Guilherme Cardoso)
+[CICLO     ] ---------------- CICLO 35 ----------------
+[ESPERA    ] PAC035 (Isis Moreira)
+[CICLO     ] ---------------- CICLO 36 ----------------
+[ALTA      ] PAC038 (Enzo Gabriel Costela)
+[ESPERA    ] PAC008 (Ana Clara Carvalho)
+[INTERNADO ] PAC036 (Luna Martins)
+[CICLO     ] ---------------- CICLO 37 ----------------
+[ALTA      ] PAC010 (Maria Sophia Melo)
+[ESPERA    ] PAC047 (Bryan Santos)
+[INTERNADO ] PAC047 (Bryan Santos)
+[CICLO     ] ---------------- CICLO 38 ----------------
+[ESPERA    ] PAC031 (Isaac da Costa)
+[CICLO     ] ---------------- CICLO 39 ----------------
+[ESPERA    ] PAC023 (Enrico Alves)
+[CICLO     ] ---------------- CICLO 40 ----------------
+[ALTA      ] PAC047 (Bryan Santos)
+[ESPERA    ] PAC001 (Sophie Peixoto)
+[INTERNADO ] PAC023 (Enrico Alves)
+[CICLO     ] ---------------- CICLO 41 ----------------
+[ALTA      ] PAC016 (Noah Pires)
+[ESPERA    ] PAC046 (Isadora da Mota)
+[INTERNADO ] PAC031 (Isaac da Costa)
+[CICLO     ] ---------------- CICLO 42 ----------------
+[ESPERA    ] PAC034 (Luiz Felipe Novaes)
+[CICLO     ] ---------------- CICLO 43 ----------------
+[ALTA      ] PAC019 (Sofia Peixoto)
+[ESPERA    ] PAC007 (Ana Laura Nogueira)
+[INTERNADO ] PAC034 (Luiz Felipe Novaes)
+[CICLO     ] ---------------- CICLO 44 ----------------
+[ESPERA    ] PAC033 (Francisco da Cunha)
+[CICLO     ] ---------------- CICLO 45 ----------------
+[ALTA      ] PAC031 (Isaac da Costa)
+[ESPERA    ] PAC022 (Lucas Gabriel Barros)
+[INTERNADO ] PAC033 (Francisco da Cunha)
+[CICLO     ] ---------------- CICLO 46 ----------------
+[ESPERA    ] PAC028 (Gabriel da Cruz)
+[CICLO     ] ---------------- CICLO 47 ----------------
+[ALTA      ] PAC032 (Caio Novaes)
+[ESPERA    ] PAC006 (Calebe Jesus)
+[INTERNADO ] PAC006 (Calebe Jesus)
+[CICLO     ] ---------------- CICLO 48 ----------------
+[ESPERA    ] PAC041 (Luiz Felipe Ferreira)
+[CICLO     ] ---------------- CICLO 49 ----------------
+[ALTA      ] PAC002 (Beatriz Gomes)
+[ESPERA    ] PAC013 (Luana da Rocha)
+[INTERNADO ] PAC013 (Luana da Rocha)
+[CICLO     ] ---------------- CICLO 50 ----------------
+[ALTA      ] PAC050 (João Guilherme Cardoso)
+[ESPERA    ] PAC024 (Ana Luiza Ribeiro)
+[INTERNADO ] PAC024 (Ana Luiza Ribeiro)
+[CICLO     ] ---------------- CICLO 51 ----------------
+[FIM       ] Não há mais pacientes para entrar na fila de espera.
+[CICLO     ] ---------------- CICLO 52 ----------------
+[CICLO     ] ---------------- CICLO 53 ----------------
+[ALTA      ] PAC013 (Luana da Rocha)
+[INTERNADO ] PAC028 (Gabriel da Cruz)
+[CICLO     ] ---------------- CICLO 54 ----------------
+[ALTA      ] PAC036 (Luna Martins)
+[INTERNADO ] PAC041 (Luiz Felipe Ferreira)
+[CICLO     ] ---------------- CICLO 55 ----------------
+[CICLO     ] ---------------- CICLO 56 ----------------
+[CICLO     ] ---------------- CICLO 57 ----------------
+[CICLO     ] ---------------- CICLO 58 ----------------
+[ALTA      ] PAC024 (Ana Luiza Ribeiro)
+[INTERNADO ] PAC043 (Arthur Rezende)
+[CICLO     ] ---------------- CICLO 59 ----------------
+[CICLO     ] ---------------- CICLO 60 ----------------
+[CICLO     ] ---------------- CICLO 61 ----------------
+[ALTA      ] PAC042 (Gustavo Henrique Melo)
+[INTERNADO ] PAC017 (Mirella Fernandes)
+[CICLO     ] ---------------- CICLO 62 ----------------
+[CICLO     ] ---------------- CICLO 63 ----------------
+[ALTA      ] PAC017 (Mirella Fernandes)
+[INTERNADO ] PAC005 (Thomas Martins)
+[CICLO     ] ---------------- CICLO 64 ----------------
+[ALTA      ] PAC043 (Arthur Rezende)
+[INTERNADO ] PAC030 (Matheus Rocha)
+[CICLO     ] ---------------- CICLO 65 ----------------
+[ALTA      ] PAC005 (Thomas Martins)
+[INTERNADO ] PAC035 (Isis Moreira)
+[CICLO     ] ---------------- CICLO 66 ----------------
+[CICLO     ] ---------------- CICLO 67 ----------------
+[CICLO     ] ---------------- CICLO 68 ----------------
+[ALTA      ] PAC012 (Caroline Costa)
+[INTERNADO ] PAC008 (Ana Clara Carvalho)
+[CICLO     ] ---------------- CICLO 69 ----------------
+[ALTA      ] PAC008 (Ana Clara Carvalho)
+[INTERNADO ] PAC001 (Sophie Peixoto)
+[CICLO     ] ---------------- CICLO 70 ----------------
+[CICLO     ] ---------------- CICLO 71 ----------------
+[CICLO     ] ---------------- CICLO 72 ----------------
+[ALTA      ] PAC034 (Luiz Felipe Novaes)
+[INTERNADO ] PAC046 (Isadora da Mota)
+[CICLO     ] ---------------- CICLO 73 ----------------
+[ALTA      ] PAC023 (Enrico Alves)
+[INTERNADO ] PAC007 (Ana Laura Nogueira)
+[CICLO     ] ---------------- CICLO 74 ----------------
+[CICLO     ] ---------------- CICLO 75 ----------------
+[CICLO     ] ---------------- CICLO 76 ----------------
+[CICLO     ] ---------------- CICLO 77 ----------------
+[CICLO     ] ---------------- CICLO 78 ----------------
+[ALTA      ] PAC030 (Matheus Rocha)
+[INTERNADO ] PAC022 (Lucas Gabriel Barros)
+[CICLO     ] ---------------- CICLO 79 ----------------
+[ALTA      ] PAC046 (Isadora da Mota)
+[CICLO     ] ---------------- CICLO 80 ----------------
+[ALTA      ] PAC007 (Ana Laura Nogueira)
+[CICLO     ] ---------------- CICLO 81 ----------------
+[CICLO     ] ---------------- CICLO 82 ----------------
+[CICLO     ] ---------------- CICLO 83 ----------------
+[ALTA      ] PAC006 (Calebe Jesus)
+[CICLO     ] ---------------- CICLO 84 ----------------
+[CICLO     ] ---------------- CICLO 85 ----------------
+[ALTA      ] PAC018 (Emilly Cunha)
+[CICLO     ] ---------------- CICLO 86 ----------------
+[CICLO     ] ---------------- CICLO 87 ----------------
+[ALTA      ] PAC022 (Lucas Gabriel Barros)
+[CICLO     ] ---------------- CICLO 88 ----------------
+[CICLO     ] ---------------- CICLO 89 ----------------
+[ALTA      ] PAC041 (Luiz Felipe Ferreira)
+[CICLO     ] ---------------- CICLO 90 ----------------
+[CICLO     ] ---------------- CICLO 91 ----------------
+[CICLO     ] ---------------- CICLO 92 ----------------
+[ALTA      ] PAC035 (Isis Moreira)
+[CICLO     ] ---------------- CICLO 93 ----------------
+[ALTA      ] PAC001 (Sophie Peixoto)
+[CICLO     ] ---------------- CICLO 94 ----------------
+[ALTA      ] PAC028 (Gabriel da Cruz)
+[CICLO     ] ---------------- CICLO 95 ----------------
+[CICLO     ] ---------------- CICLO 96 ----------------
+[ALTA      ] PAC033 (Francisco da Cunha)
+[FIM       ] Simulação concluída. Todos os pacientes foram atendidos e altas foram processadas.
