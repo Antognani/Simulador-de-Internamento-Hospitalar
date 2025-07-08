@@ -88,7 +88,7 @@ void dequeInserirFim(Deque* d, Paciente pac) {
         d->frente = d->tras = novoNo; //se estiver vazio, novo nó é a cabeça e a fim
     } else {
         d->tras->proximo = novoNo; //atualiza o próximo do último nó
-        novoNo->anterior = d->tras; //atualiza o novo nó
+        d->tras = novoNo; //atualiza o novo nó
     }
     d->tamanho++; //incrementa o tamanho do deque
 }
