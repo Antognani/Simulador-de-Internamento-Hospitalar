@@ -38,7 +38,7 @@ void iniciarSimulacao() {
     while (!todosPacientesAlta || !dequeEstaVazio(filaEspera) || !leitosEstaVazio(leitos)) {
         leitosIncrementarCiclos(leitos); //incrementa o contador de ciclos internado para cada paciente
         char detalhesCiclo[100]; //aumentei para 100 para evitar overflow
-        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "---------------- CICLO %02d ----------------", ciclo);
+        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "----------------- CICLO %02d ----------------", ciclo);
         logRegistrar("CICLO", detalhesCiclo); //registra o início do ciclo
 
         //verifica se há pacientes aptos para alta

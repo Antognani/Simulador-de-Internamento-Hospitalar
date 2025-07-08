@@ -55,7 +55,7 @@ int dequeEstaVazio(Deque* d) {
 
 //INSERÇÃO HEAD
 void dequeInserirCabeca(Deque* d, Paciente pac) {
-    No* novoNo = (No*)malloc(sizeof(No)); //aloca memória para o novo nó
+    No* novoNo = (No*)malloc(sizeof(No)); //aloca memória pro novo nó
     if (novoNo == NULL) { 
         fprintf(stderr, "Erro ao alocar memória para novo nó.\n");
         exit(EXIT_FAILURE);
@@ -65,7 +65,7 @@ void dequeInserirCabeca(Deque* d, Paciente pac) {
     novoNo->proximo = d->frente; //novo nó aponta pra cabeça atual
 
     if (dequeEstaVazio(d)) {
-        d->frente = novoNo;  //se estiver vazio, novo nó é a cabeça
+        d->frente = d->tras = novoNo;  //se estiver vazio, novo nó é a cabeça e o no final
     } else {
         d->frente->anterior = novoNo; //novo nó se torna o novo nó anterior da cabeça
         d->frente = novoNo; //atualiza a cabeça para o novo nó
@@ -88,7 +88,7 @@ void dequeInserirFim(Deque* d, Paciente pac) {
         d->frente = d->tras = novoNo; //se estiver vazio, novo nó é a cabeça e a fim
     } else {
         d->tras->proximo = novoNo; //atualiza o próximo do último nó
-        d->tras = novoNo; //atualiza o último nó para o novo nó
+        novoNo->anterior = d->tras; //atualiza o novo nó
     }
     d->tamanho++; //incrementa o tamanho do deque
 }
