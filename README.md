@@ -13,33 +13,11 @@ O projeto foi modularizado da seguinte maneira:
 
 |
 
-|-- paciente.h
+| include / simulacao.h - estruturas.h - paciente.h - io.h
 
-|
+| src / simulacao.c - estruturas.c - io.c - main.c
 
-|-- estruturas.h
+| makefile
 
-|-- estruturas.c
-
-|
-
-|-- log.h
-
-|-- log.c
-
-|
-
-|-- simulacao.h
-
-|-- simulacao.c
-
-|
-
-|-- main.c
-
-|
-
-|-- makefile
-
-|-- pacientes.csv
+| pacientes.csv
 
