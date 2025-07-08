@@ -59,14 +59,20 @@ void logIniciar(const char* nomeArquivo) {
 
 //registra um evento no log com os detalhes
 void logRegistrar(const char* evento, const char* detalhes) {
-    char mensagem[256]; //buffer para armazenar a mensagem formatada
-    sprintf(mensagem, "%-11s- %s\n", evento, detalhes); //formata a mensagem com o evento e os detalhes
+    char mensagem[256];
 
-    printf("%s", mensagem); //printa a mensagem no console
+    //ve se a string do evento está vazia ou não
+    if (strlen(evento) > 0) { //se houver um evento
+        sprintf(mensagem, "%-16s - %s\n", evento, detalhes);
+    } else {
+        sprintf(mensagem, "%s\n", detalhes); //se o evento estiver vazio
+    }
+
+    printf("%s", mensagem); //printa console
 
     if (arquivoLog) {
-        fprintf(arquivoLog, "%s", mensagem); //escreve a mensagem no arquivo de log
-        fflush(arquivoLog); //garante que a mensagem seja escrita imediatamente
+        fprintf(arquivoLog, "%s", mensagem); //escreve log
+        fflush(arquivoLog); //limpa buffer
     }
 }
 

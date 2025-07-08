@@ -38,7 +38,7 @@ void iniciarSimulacao() {
     while (!todosPacientesAlta || !dequeEstaVazio(filaEspera) || !leitosEstaVazio(leitos)) {
         leitosIncrementarCiclos(leitos); //incrementa o contador de ciclos internado para cada paciente
         char detalhesCiclo[100]; //aumentei para 100 para evitar overflow
-        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "[CICLO %02d]", ciclo);
+        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "CICLO %02d", ciclo);
         logRegistrar("", detalhesCiclo); //registra o inicio do ciclo
 
         //verifica se há pacientes aptos para alta
@@ -62,7 +62,7 @@ void iniciarSimulacao() {
                 Paciente pacienteSorteadoCopy = *pacienteSorteado; //copia o paciente sorteado
 
                 char detalhesSorteio[160]; //aumentei para 160 para evitar overflow
-                snprintf(detalhesSorteio, sizeof(detalhesSorteio), "%s (%s)", pacienteSorteadoCopy.id, pacienteSorteadoCopy.nomeCompleto); //copia os detalhes do paciente sorteado
+                snprintf(detalhesSorteio, sizeof(detalhesSorteio), "%s (prioridade %d)", pacienteSorteadoCopy.id, pacienteSorteadoCopy.prioridade); //copia os detalhes do paciente sorteado
                 logRegistrar("ESPERA", detalhesSorteio);
 
                 if (pacienteSorteadoCopy.prioridade > 4 || pacienteSorteadoCopy.prioridade == 4) { //se a prioridade for 4 ou 5, adiciona ao início da fila de espera
@@ -83,7 +83,7 @@ void iniciarSimulacao() {
             LeitosAdicionar(leitos, pacienteInternar); //adiciona o paciente aos leitos
 
             char detalhesInternacao[160]; //aumentei para 160 para evitar overflow
-            snprintf(detalhesInternacao, sizeof(detalhesInternacao), "%s (%s)", pacienteInternar.id, pacienteInternar.nomeCompleto); //copia o paciente internado
+            snprintf(detalhesInternacao, sizeof(detalhesInternacao), "%s (prioridade %d)", pacienteInternar.id, pacienteInternar.prioridade); //copia o paciente internado
             logRegistrar("INTERNADO", detalhesInternacao); //registra a internação
         }
         
