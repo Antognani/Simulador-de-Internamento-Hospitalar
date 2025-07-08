@@ -60,7 +60,7 @@ void logIniciar(const char* nomeArquivo) {
 //registra um evento no log com os detalhes
 void logRegistrar(const char* evento, const char* detalhes) {
     char mensagem[256]; //buffer para armazenar a mensagem formatada
-    sprintf(mensagem, "[%-10s] %s\n", evento, detalhes); //formata a mensagem com o evento e os detalhes
+    sprintf(mensagem, "%-11s- %s\n", evento, detalhes); //formata a mensagem com o evento e os detalhes
 
     printf("%s", mensagem); //printa a mensagem no console
 

@@ -29,7 +29,7 @@ void iniciarSimulacao() {
     ListaLeitos* leitos = LeitosIniciar(); //inicializa a lista de leitos
 
     carregarPacientesCSV(ARQUIVO_PACIENTES, thPacientes); //carrega os pacientes do arquivo CSV pra tabela hash
-    logRegistrar("INFO", "Pacientes carregados do arquivo CSV.");
+    logRegistrar("OBS", "Pacientes carregados do arquivo CSV.");
 
     int ciclo = 1; //contador de ciclos
     int todosPacientesAlta = 0; //flag para verificar se todos os pacientes já receberam alta
@@ -38,8 +38,8 @@ void iniciarSimulacao() {
     while (!todosPacientesAlta || !dequeEstaVazio(filaEspera) || !leitosEstaVazio(leitos)) {
         leitosIncrementarCiclos(leitos); //incrementa o contador de ciclos internado para cada paciente
         char detalhesCiclo[100]; //aumentei para 100 para evitar overflow
-        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "----------------- CICLO %02d ----------------", ciclo);
-        logRegistrar("CICLO", detalhesCiclo); //registra o início do ciclo
+        snprintf(detalhesCiclo, sizeof(detalhesCiclo), "[CICLO %02d]", ciclo);
+        logRegistrar("", detalhesCiclo); //registra o inicio do ciclo
 
         //verifica se há pacientes aptos para alta
         if(!leitosEstaVazio(leitos) && leitosTemPacienteAptoAlta(leitos)) {
@@ -88,13 +88,13 @@ void iniciarSimulacao() {
         }
         
         printf("\n");
-        fflush(stdout); // Limpa o buffer de saída
-        sleep(TEMPO_CICLO); // Pausa a execução por TEMPO_CICLO segundos
+        fflush(stdout); // limpa o buffer de saída
+        sleep(TEMPO_CICLO); // pausa a execução por 2 segundos
         ciclo++;
     }
 
     logRegistrar("FIM", "Simulação concluída. Todos os pacientes foram atendidos e altas foram processadas.");
-    logFechar(); // Fecha o log
+    logFechar(); // fecha o log
 
     tabelaHashDestruir(thPacientes);
     dequeDestruir(filaEspera);
