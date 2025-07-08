@@ -6,6 +6,7 @@ Para executar, utilizar:
 make
 ./bin/hospital
 
+Repositório github: https://github.com/Antognani/Simulador-de-Internamento-Hospitalar
 
 O projeto foi modularizado da seguinte maneira:
 
